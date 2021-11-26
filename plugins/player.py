@@ -317,7 +317,7 @@ async def play(_, message: Message):
             reply_markup=keyboard,
         )
     else:
-        await callsmusic.pytgcalls.join_group_call(message.chat.id, InputStream (InputAudioStream (file_path, ), ), stream_type=StreamType().local_stream, )
+        await clientbot.pytgcalls.join_group_call(message.chat.id, InputStream (InputAudioStream (file_path, ), ), stream_type=StreamType().local_stream, )
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
