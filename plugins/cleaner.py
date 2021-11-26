@@ -1,5 +1,3 @@
-# Copyright (C) 2021 By VeezMusicProject
-
 import os
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -35,7 +33,7 @@ async def clear_raw(_, message: Message):
         await message.reply_text("❌ **no raw files**")
 
 
-@Client.on_message(command(["cleanup", "fresh"]) & ~filters.edited)
+@Client.on_message(command(["cleanup", "fresh", "rmn]) & ~filters.edited)
 @errors
 @sudo_users_only
 async def cleanup(_, message: Message):
