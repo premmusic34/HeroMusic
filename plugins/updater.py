@@ -11,7 +11,7 @@ from pyrogram import Client, filters
 from os import system, execle, environ
 from modules.helpers.decorators import sudo_users_only
 from git.exc import InvalidGitRepositoryError
-from config import UPSTREAM_REPO, BOT_USERNAME, HEROKU_API_KEY, HEROKU_APP_NAME
+from modules.config import UPSTREAM_REPO, BOT_USERNAME, HEROKU_API_KEY, HEROKU_APP_NAME
 
 
 def gen_chlog(repo, diff):
