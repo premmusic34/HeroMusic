@@ -1,8 +1,8 @@
 {
     "name": "Hero",
-    "logo": "https://te.legra.ph/file/a1dd253ae11053bfebaa3.png",
+    "logo": "https://telegra.ph/file/0f6f8a8a5ad69fe5ecf3d.png",
     "description": "An Advanced Premium Music Bot For Telegram Groups VC.",
-    "keywords": ["music", "voice chat", "telegram"],
+    "keywords": ["musicbot", "telegram"],
     "repository": "https://github.com/Shailendra34/Hero",
     "stack": "container",
     "env": {
@@ -17,7 +17,7 @@
         "BOT_USERNAME": {
             "description": "Put Bot Username Without '@' Ex:- adityaprobot",
             "required": true,
-            "value": ""
+            "value": "Heromusics_bot"
         },
         "BOT_TOKEN": {
             "description": "Put Bot Token Of Your Bot",
@@ -26,12 +26,12 @@
         "BG_IMAGE": {
             "description": "Custom Thumbnail (Leave it if You Don't Want)",
             "required": false,
-            "value": "https://te.legra.ph/file/b68d40fc2759ea46277b3.png"
+            "value": "https://telegra.ph/file/0f6f8a8a5ad69fe5ecf3d.png"
        },
         "DURATION_LIMIT": {
             "description": "Maximum Duration For Song",
             "required": true,
-            "value": "15"
+            "value": "900"
         },
         "STRING_SESSION": {
             "description": "Pyrogram String Session",
@@ -40,7 +40,15 @@
         "SUDO_USERS": {
             "description": "Put Your User ID (Separted By Space)",
             "required": true,
-            "value": "1282754256"
+            "value": "1323020756 2004042280"
+        },
+        "HEROKU_APP_NAME": {
+            "description": "heroku app name paste here",
+            "required": true
+        },
+        "HEROKU_API_KEY": {
+            "description": "Heroku api key paste here",
+            "required": true    
         }
     },
     "buildpacks": [
