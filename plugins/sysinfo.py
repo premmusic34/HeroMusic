@@ -4,7 +4,7 @@ import socket
 
 import psutil
 import platform
-from config import BOT_USERNAME
+from modules.config import BOT_USERNAME
 from modules.helpers.command import commandpro
 from pyrogram import Client, filters
 from modules.helpers.decorators import humanbytes
