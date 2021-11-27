@@ -8,7 +8,7 @@ from modules.config import BOT_USERNAME
 downloads = os.path.realpath("downloads")
 raw_files = os.path.realpath("raw_files")
 
-@Client.on_message(command(["rmd", "clear{BOT_USERNAME}", "clear"]) & ~filters.edited)
+@Client.on_message(command(["rmd", "clear@{BOT_USERNAME}", "clear"]) & ~filters.edited)
 @errors
 async def clear_downloads(_, message: Message):
     ls_dir = os.listdir(downloads)
@@ -20,7 +20,7 @@ async def clear_downloads(_, message: Message):
         await message.reply_text("❌ **no files downloaded**")
 
         
-@Client.on_message(command(["rmw", "clean{BOT_USERNAME}", "clean"]) & ~filters.edited)
+@Client.on_message(command(["rmw", "clean@{BOT_USERNAME}", "clean"]) & ~filters.edited)
 @errors
 async def clear_raw(_, message: Message):
     ls_dir = os.listdir(raw)
@@ -32,7 +32,7 @@ async def clear_raw(_, message: Message):
         await message.reply_text("❌ **no raw files**")
 
 
-@Client.on_message(command(["cleanup", "cleanup{BOT_USERNAME}", "fresh"]) & ~filters.edited)
+@Client.on_message(command(["cleanup", "cleanup@{BOT_USERNAME}", "fresh"]) & ~filters.edited)
 @errors
 async def cleanup(_, message: Message):
     pth = os.path.realpath(".")
