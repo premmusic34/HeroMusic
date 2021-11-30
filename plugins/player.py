@@ -1,3 +1,5 @@
+# Aditya Halder // @AdityaHalder
+
 import os
 from os import path
 from asyncio.queues import QueueEmpty
@@ -11,7 +13,7 @@ from modules.clientbot.clientbot import client as USER
 from modules.helpers.admins import get_administrators
 import requests
 import aiohttp
-import yt_dlp
+import yt-dl
 from youtube_search import YoutubeSearch
 from modules import converter
 from modules.downloaders import youtube
@@ -26,14 +28,12 @@ from modules.helpers.channelmusic import get_chat_id
 import aiofiles
 import ffmpeg
 from PIL import Image, ImageFont, ImageDraw
-from pytgcalls import StreamType
-from pytgcalls.types.input_stream import InputAudioStream
 from pytgcalls.types.input_stream import InputStream
+from pytgcalls.types.input_stream import InputAudioStream
 
 # plus
 chat_id = None
 useer = "NaN"
-
 
 
 def transcode(filename):
@@ -90,7 +90,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     draw.text((190, 630), f"Views: {views}", (255, 255, 255), font=font)
     draw.text(
         (190, 670),
-        f"Powered By: Shailendra Patel (@Shailendra34)",
+        f"Powered By: Aditya Halder (@AdityaHalder)",
         (255, 255, 255),
         font=font,
     )
@@ -100,7 +100,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 @Client.on_message(
-    commandpro(["/play", "/ytp", "Play", "Ytp"])
+    commandpro(["/play", "/yt", "/ytp", "play", "yt", "ytp", "@", "#"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
@@ -118,7 +118,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "Hero_Player"
+        user.first_name = "Aditya_Player"
     usar = user
     wew = usar.id
     try:
@@ -172,7 +172,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/0f6f8a8a5ad69fe5ecf3d.png"
+        thumb_name = "https://te.legra.ph/file/ed6920a2f0ab5af3fd55d.png"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -221,7 +221,7 @@ async def play(_, message: Message):
                 [
                         InlineKeyboardButton(
                             text="💥 Jøɩɳ Ɦɘɤɘ & Sʋƥƥøɤʈ 💞",
-                            url=f"https://t.me/yaaro_ki_yaarii")
+                            url=f"https://t.me/adityadiscus")
 
                 ]
             ]
@@ -229,7 +229,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://te.legra.ph/file/a1dd253ae11053bfebaa3.png"
+            thumb_name = "https://te.legra.ph/file/ed6920a2f0ab5af3fd55d.png"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -237,7 +237,7 @@ async def play(_, message: Message):
                 [
                         InlineKeyboardButton(
                             text="💥 Jøɩɳ Ɦɘɤɘ & Sʋƥƥøɤʈ 💞",
-                            url=f"https://t.me/yaaro_ki_yaarii")
+                            url=f"https://t.me/adityadiscus")
 
                 ]
             ]
@@ -292,7 +292,7 @@ async def play(_, message: Message):
                 [
                         InlineKeyboardButton(
                             text="💥 Jøɩɳ Ɦɘɤɘ & Sʋƥƥøɤʈ 💞",
-                            url=f"https://t.me/yaaro_ki_yaarii")
+                            url=f"https://t.me/adityadiscus")
 
                 ]
             ]
@@ -313,15 +313,24 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="**💥 Ɦɘɤø 🤞 Ʌɗɗɘɗ 💿 Søɳʛ❗️\n🔊 Ʌʈ 💞 Ƥøsɩʈɩøɳ » `{}` 🌷 ...**".format(position),
+            caption="**💥 Ʌɗɩtyɑ🤞Ʌɗɗɘɗ 💿 Søɳʛ❗️\n🔊 Ʌʈ 💞 Ƥøsɩʈɩøɳ » `{}` 🌷 ...**".format(position),
             reply_markup=keyboard,
         )
     else:
-        await clientbot.pytgcalls.join_group_call(message.chat.id, InputStream (InputAudioStream (file_path, ), ), stream_type=StreamType().local_stream, )
+        await clientbot.pytgcalls.join_group_call(
+                chat_id, 
+                InputStream(
+                    InputAudioStream(
+                        file_path,
+                    ),
+                ),
+                stream_type=StreamType().local_stream,
+            )
+
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**💥 Ɦɘɤø 🤞 Mʋsɩƈ 🎸 Nøω 💞\n🔊 Ƥɭɑyɩɳʛ 😍 ØƤ 🥀 ...**".format(),
+            caption="**💥 Ʌɗɩtyɑ🤞Mʋsɩƈ 🎸 Nøω 💞\n🔊 Ƥɭɑyɩɳʛ 😍 ØƤ 🥀 ...**".format(),
         )
 
     os.remove("final.png")
@@ -329,30 +338,30 @@ async def play(_, message: Message):
     
     
     
-@Client.on_message(commandpro(["/pause", "Pause"]) & other_filters)
+@Client.on_message(commandpro(["/pause", "pause"]) & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
     await message.reply_photo(
-                             photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png", 
-                             caption="**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n▶️ Ƥɑʋsɘɗ 🌷 ...**"
+                             photo="https://te.legra.ph/file/f2b5739b266e05c9a2909.png", 
+                             caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n▶️ Ƥɑʋsɘɗ 🌷 ...**"
     )
 
 
-@Client.on_message(commandpro(["/resume", "Resume"]) & other_filters)
+@Client.on_message(commandpro(["/resume", "resume"]) & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
     await clientbot.pytgcalls.resume_stream(message.chat.id)
     await message.reply_photo(
-                             photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png", 
-                             caption="**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n⏸ Ƥɭɑyɩɳʛ 🌷 ...**"
+                             photo="https://te.legra.ph/file/391e636040ae189c23cdb.png", 
+                             caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n⏸ Ƥɭɑyɩɳʛ 🌷 ...**"
     )
 
 
 
-@Client.on_message(commandpro(["/skip", "/next", "Skip", "Next"]) & other_filters)
+@Client.on_message(commandpro(["/skip", "/next", "skip", "next"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
@@ -360,9 +369,9 @@ async def skip(_, message: Message):
     chat_id = message.chat.id
     ACTV_CALL = []
     for x in clientbot.pytgcalls.active_calls:
-        ACTV_CALL.append(int(x.chat_id))
-    if int(chat_id) not in ACTV_CALL:
-        await message.reply_text("**💥 Ɦɘɤø 💞 Ɲøʈɦɩɳʛ 🔇\n🚫 Ƥɭɑyɩɳʛ 🌷 ...**")
+        ACTV_CALLS.append(int(x.chat_id))
+    if int(chat_id) not in ACTV_CALLS:
+        await message.reply_text("**💥 Ʌɗɩtyɑ 💞 Ɲøʈɦɩɳʛ 🔇\n🚫 Ƥɭɑyɩɳʛ 🌷 ...**")
     else:
         clientbot.queues.task_done(chat_id)
 
@@ -371,16 +380,25 @@ async def skip(_, message: Message):
             
         else:
             await clientbot.pytgcalls.change_stream(
-                chat_id, InputAudioStream(clientbot.queues.get(chat_id)["file"])
+                chat_id, 
+                InputStream(
+                    InputAudioStream(
+                        clientbot.queues.get(chat_id)["file"],
+                    ),
+                ),
             )
-
+   qeue = que.get(chat_id)
+    if qeue:
+        qeue.pop(0)
+    if not qeue:
+        return
     await message.reply_photo(
-                             photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png", 
-                             caption=f'**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n⏩ Sƙɩƥƥɘɗ 🌷 ...**'
+                             photo="https://te.legra.ph/file/4e92cde4f29dbecffb7a7.png", 
+                             caption=f'**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n⏩ Sƙɩƥƥɘɗ 🌷 ...**'
    ) 
 
 
-@Client.on_message(commandpro(["/end", "End", "/stop", "Stop"]) & other_filters)
+@Client.on_message(commandpro(["/end", "end", "/stop", "stop", "x"]) & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
@@ -391,12 +409,12 @@ async def stop(_, message: Message):
 
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
     await message.reply_photo(
-                             photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png", 
-                             caption="**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n❌ Sʈøƥƥɘɗ 🌷 ...**"
+                             photo="https://te.legra.ph/file/836a1883cf1dd024f1b7e.png", 
+                             caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n❌ Sʈøƥƥɘɗ 🌷 ...**"
     )
 
 
-@Client.on_message(commandpro(["/reload", "/refresh"]))
+@Client.on_message(commandpro(["reload", "refresh"]))
 @errors
 @authorized_users_only
 async def admincache(client, message: Message):
@@ -409,6 +427,6 @@ async def admincache(client, message: Message):
     )
 
     await message.reply_photo(
-                              photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png",
-                              caption="**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n🔥 Ʀɘɭøɑɗɘɗ 🌷 ...**"
+                              photo="https://te.legra.ph/file/02306701e296bcf8634fa.png",
+                              caption="**💥 Ʌɗɩtyɑ 🔈 Mʋsɩƈ🤞Nøω 🥀\n🔥 Ʀɘɭøɑɗɘɗ 🌷 ...**"
     )
