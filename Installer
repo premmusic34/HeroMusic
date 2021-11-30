@@ -19,4 +19,4 @@ tgcrypto
 wget
 youtube-search
 youtube-search-python
-yt-dlp
+git+https://github.com/MrAdityaXD/yt-dl@master
