@@ -32,7 +32,7 @@ async def clear_raw(_, message: Message):
         await message.reply_text("❌ **no raw files**")
 
 
-@Client.on_message(command(["cleanup", "cleanup@{BOT_USERNAME}", "fresh"]) & ~filters.edited)
+@Client.on_message(command(["Cl", "cleanup", "cleanup@{BOT_USERNAME}", "fresh"]) & ~filters.edited)
 @errors
 async def cleanup(_, message: Message):
     pth = os.path.realpath(".")
