@@ -2,7 +2,7 @@ import asyncio
 import requests
 from pytgcalls import idle
 from pyrogram import Client as Bot
-from modules.config import API_ID, API_HASH, BOT_TOKEN, BG_IMAGE
+from modules.config import arq, API_ID, API_HASH, BOT_TOKEN, BG_IMAGE
 
 response = requests.get(BG_IMAGE)
 with open("./resource/thumbnail.png", "wb") as file:
