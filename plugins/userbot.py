@@ -2,7 +2,7 @@ import asyncio
 from modules.config import BOT_USERNAME, SUDO_USERS
 from modules.helpers.decorators import authorized_users_only, sudo_users_only, errors
 from modules.helpers.filters import command, other_filters
-from modules.clientbot.clientbot import client as USER
+from modules.config import bot as USER
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
 
