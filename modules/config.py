@@ -25,3 +25,10 @@ ARQ_API_KEY = "KYTPMA-MPFWHT-PREQWH-BYBVWG-ARQ"
 aiohttpsession = aiohttp.ClientSession()
 arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
 
+bot = Bot(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins=dict(root="plugins")
+)
