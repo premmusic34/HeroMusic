@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserAlreadyParticipant
 from modules.cache.admins import set
-from modules.clientbot import clientbot, queues
+from modules.clientbot import queues
 from modules.config import bot as USER
 from modules.helpers.admins import get_administrators
 import requests
