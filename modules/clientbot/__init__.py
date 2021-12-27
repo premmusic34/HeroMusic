@@ -1,2 +1,2 @@
-from .clientbot import pytgcalls, run
+from config import pytgcalls
 from . import queues
