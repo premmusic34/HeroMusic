@@ -3,7 +3,9 @@ import aiohttp
 from Python_ARQ import ARQ
 from os import getenv
 from dotenv import load_dotenv
-    
+from pyrogram import Client as Bot
+from pytgcalls import PyTgCalls
+
 load_dotenv()
 que = {}
 admins = {}
@@ -32,3 +34,6 @@ bot = Bot(
     bot_token=BOT_TOKEN,
     plugins=dict(root="plugins")
 )
+call_py = PyTgCalls(bot)
+
+                    
