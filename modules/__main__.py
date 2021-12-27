@@ -3,19 +3,12 @@ import requests
 from pytgcalls import idle
 from pytgcalls import PyTgCalls
 from pyrogram import Client as Bot
-from modules.config import arq, API_ID, API_HASH, BOT_TOKEN, BG_IMAGE
+from modules.config import arq, API_ID, API_HASH, BOT_TOKEN, BG_IMAGE, bot
 
 response = requests.get(BG_IMAGE)
 with open("./resource/thumbnail.png", "wb") as file:
     file.write(response.content)
     
-bot = Bot(
-    ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=BOT_TOKEN,
-    plugins=dict(root="plugins")
-)
 
 call_py = PyTgCalls(bot)
                     
