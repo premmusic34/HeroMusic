@@ -1,5 +1,6 @@
 import os
 import aiohttp
+from Python_ARQ import ARQ
 from os import getenv
 from dotenv import load_dotenv
     
@@ -19,3 +20,8 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1323020756").split()))
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/Shailendra34/Hero")
+
+ARQ_API_KEY = "KYTPMA-MPFWHT-PREQWH-BYBVWG-ARQ"
+aiohttpsession = aiohttp.ClientSession()
+arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
+
