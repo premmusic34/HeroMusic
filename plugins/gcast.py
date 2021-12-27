@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 
-from modules.clientbot.clientbot import client as aditya
+from modules.config import bot as aditya
 from modules.config import SUDO_USERS
 
 @Client.on_message(filters.command(["gcast", "post", "send"]))
