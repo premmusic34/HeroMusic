@@ -332,7 +332,9 @@ async def play(_, message: Message):
             reply_markup=keyboard,
             caption="**💥 Ɦɘɤø 🤞 Mʋsɩƈ 🎸 Nøω 💞\n🔊 Ƥɭɑyɩɳʛ 😍 ØƤ 🥀 ...**".format(),
         )
-
+     except Exception as ep:
+        await huehue.edit(f"`{ep}`")
+                            
     os.remove("final.png")
     return await lel.delete()
     
