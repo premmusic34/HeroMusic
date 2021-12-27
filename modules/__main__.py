@@ -1,7 +1,7 @@
+import asyncio
 import requests
 from pytgcalls import idle
 from pyrogram import Client as Bot
-from modules.clientbot import run
 from modules.config import API_ID, API_HASH, BOT_TOKEN, BG_IMAGE
 
 response = requests.get(BG_IMAGE)
@@ -16,6 +16,22 @@ bot = Bot(
     plugins=dict(root="plugins")
 )
 
-bot.start()
-run()
-idle()
+call_py = PyTgCalls(bot
+                    
+                    
+
+async def main():
+    await call_py.start()
+    print(
+        """
+    ------------------
+   | Userbot Actived! |
+    ------------------
+"""
+    )
+    await idle()
+    await arq.close()
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
