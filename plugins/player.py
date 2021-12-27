@@ -317,7 +317,7 @@ async def play(_, message: Message):
             reply_markup=keyboard,
         )
     else:
-        await clientbot.call_py.join_group_call(
+        await call_py.join_group_call(
                 chat_id, 
                 InputStream(
                     InputAudioStream(
