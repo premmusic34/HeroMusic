@@ -16,7 +16,7 @@ bot = Bot(
     plugins=dict(root="plugins")
 )
 
-call_py = PyTgCalls(bot
+call_py = PyTgCalls(bot)
                     
                     
 
