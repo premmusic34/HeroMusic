@@ -15,7 +15,7 @@ import yt_dlp
 from youtube_search import YoutubeSearch
 from modules import converter
 from modules.downloaders import youtube
-from modules.config import DURATION_LIMIT, que, SUDO_USERS
+from modules.config import DURATION_LIMIT, que, SUDO_USERS, call_py
 from modules.cache.admins import admins as a
 from modules.helpers.filters import command, other_filters
 from modules.helpers.command import commandpro
@@ -317,7 +317,7 @@ async def play(_, message: Message):
             reply_markup=keyboard,
         )
     else:
-        await clientbot.pytgcalls.join_group_call(
+        await clientbot.call_py.join_group_call(
                 chat_id, 
                 InputStream(
                     InputAudioStream(
