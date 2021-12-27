@@ -15,7 +15,7 @@ import yt_dlp
 from youtube_search import YoutubeSearch
 from modules import converter
 from modules.downloaders import youtube
-from modules.config import DURATION_LIMIT, que, SUDO_USERS, call_py
+from modules.config import DURATION_LIMIT, que, SUDO_USERS, pytgcalls
 from modules.cache.admins import admins as a
 from modules.helpers.filters import command, other_filters
 from modules.helpers.command import commandpro
@@ -307,7 +307,7 @@ async def play(_, message: Message):
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await converter.convert(youtube.download(url))
     ACTV_CALLS = []
-    for x in call_py.active_calls:
+    for x in pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(message.chat.id) in ACTV_CALLS:
         position = await queues.put(message.chat.id, file=file_path)
@@ -317,7 +317,7 @@ async def play(_, message: Message):
             reply_markup=keyboard,
         )
     else:
-        await call_py.join_group_call(
+        await pytgcalls.join_group_call(
                 chat_id, 
                 InputStream(
                     InputAudioStream(
@@ -342,7 +342,7 @@ async def play(_, message: Message):
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
-    await clientbot.pytgcalls.pause_stream(message.chat.id)
+    await pytgcalls.pause_stream(message.chat.id)
     await message.reply_photo(
                              photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png", 
                              caption="**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n▶️ Ƥɑʋsɘɗ 🌷 ...**"
@@ -353,7 +353,7 @@ async def pause(_, message: Message):
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
-    await clientbot.pytgcalls.resume_stream(message.chat.id)
+    await pytgcalls.resume_stream(message.chat.id)
     await message.reply_photo(
                              photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png", 
                              caption="**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n⏸ Ƥɭɑyɩɳʛ 🌷 ...**"
@@ -368,7 +368,7 @@ async def skip(_, message: Message):
     global que
     chat_id = message.chat.id
     ACTV_CALL = []
-    for x in clientbot.pytgcalls.active_calls:
+    for x in pytgcalls.active_calls:
         ACTV_CALL.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALL:
         await message.reply_text("**💥 Ɦɘɤø 💞 Ɲøʈɦɩɳʛ 🔇\n🚫 Ƥɭɑyɩɳʛ 🌷 ...**")
@@ -379,7 +379,7 @@ async def skip(_, message: Message):
             await clientbot.pytgcalls.leave_group_call(chat_id)
             
         else:
-            await clientbot.pytgcalls.change_stream(
+            await pytgcalls.change_stream(
                 chat_id, InputAudioStream(clientbot.queues.get(chat_id)["file"])
             )
 
@@ -398,7 +398,7 @@ async def stop(_, message: Message):
     except QueueEmpty:
         pass
 
-    await clientbot.pytgcalls.leave_group_call(message.chat.id)
+    await pytgcalls.leave_group_call(message.chat.id)
     await message.reply_photo(
                              photo="https://te.legra.ph/file/a1dd253ae11053bfebaa3.png", 
                              caption="**💥 Ɦɘɤø 🔈 Mʋsɩƈ 🤞 Nøω 🥀\n❌ Sʈøƥƥɘɗ 🌷 ...**"
