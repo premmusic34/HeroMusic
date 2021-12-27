@@ -307,7 +307,7 @@ async def play(_, message: Message):
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await converter.convert(youtube.download(url))
     ACTV_CALLS = []
-    for x in clientbot.pytgcalls.active_calls:
+    for x in call_py.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(message.chat.id) in ACTV_CALLS:
         position = await queues.put(message.chat.id, file=file_path)
