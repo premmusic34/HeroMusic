@@ -7,7 +7,7 @@ from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardM
 from pyrogram.errors import UserAlreadyParticipant
 from modules.cache.admins import set
 from modules.clientbot import clientbot, queues
-from modules import bot as USER
+from modules.config import bot as USER
 from modules.helpers.admins import get_administrators
 import requests
 import aiohttp
