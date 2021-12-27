@@ -1,7 +1,7 @@
 import asyncio
 import requests
 from pytgcalls import idle
-from modules.config import arq, BG_IMAGE, call_py
+from modules.config import arq, BG_IMAGE, pytgcalls
 
 response = requests.get(BG_IMAGE)
 with open("./resource/thumbnail.png", "wb") as file:
@@ -12,7 +12,7 @@ with open("./resource/thumbnail.png", "wb") as file:
                     
 
 async def main():
-    await call_py.start()
+    await pytgcalls.start()
     print(
         """
     ------------------
