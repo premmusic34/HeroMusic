@@ -2,7 +2,7 @@ from pytgcalls import PyTgCalls
 from pytgcalls.types import Update
 from pytgcalls.types.input_stream import InputStream
 from pytgcalls.types.input_stream import InputAudioStream
-from modules import config
+from modules.config import pytgcalls, bot
 from . import queues
 
 
