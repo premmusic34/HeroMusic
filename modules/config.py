@@ -34,6 +34,6 @@ bot = Bot(
     bot_token=BOT_TOKEN,
     plugins=dict(root="plugins")
 )
-call_py = PyTgCalls(bot)
+pytgcalls = PyTgCalls(bot)
 
                     
