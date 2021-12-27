@@ -1,6 +1,7 @@
 import asyncio
 import requests
 from pytgcalls import idle
+from pytgcalls import PyTgCalls
 from pyrogram import Client as Bot
 from modules.config import arq, API_ID, API_HASH, BOT_TOKEN, BG_IMAGE
 
