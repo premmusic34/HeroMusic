@@ -2,14 +2,14 @@ import os
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from modules.helpers.filters import command, other_filters
-from modules.helpers.decorators import errors
-from modules.config import BOT_USERNAME
+from modules.helpers.decorators import sudo_users_only, errors
 
 downloads = os.path.realpath("downloads")
 raw_files = os.path.realpath("raw_files")
 
-@Client.on_message(command(["rmd", "clear@{BOT_USERNAME}", "clear"]) & ~filters.edited)
+@Client.on_message(command(["/clean", "rmd", "clear"]) & ~filters.edited)
 @errors
+@sudo_users_only
 async def clear_downloads(_, message: Message):
     ls_dir = os.listdir(downloads)
     if ls_dir:
@@ -20,10 +20,11 @@ async def clear_downloads(_, message: Message):
         await message.reply_text("❌ **no files downloaded**")
 
         
-@Client.on_message(command(["rmw", "clean@{BOT_USERNAME}", "clean"]) & ~filters.edited)
+@Client.on_message(command(["rmw", "clean"]) & ~filters.edited)
 @errors
+@sudo_users_only
 async def clear_raw(_, message: Message):
-    ls_dir = os.listdir(raw)
+    ls_dir = os.listdir(raw_files)
     if ls_dir:
         for file in os.listdir(raw_files):
             os.remove(os.path.join(raw_files, file))
@@ -32,8 +33,9 @@ async def clear_raw(_, message: Message):
         await message.reply_text("❌ **no raw files**")
 
 
-@Client.on_message(command(["Cl", "cleanup", "cleanup@{BOT_USERNAME}", "fresh"]) & ~filters.edited)
+@Client.on_message(command(["cl", "cleanup"]) & ~filters.edited)
 @errors
+@sudo_users_only
 async def cleanup(_, message: Message):
     pth = os.path.realpath(".")
     ls_dir = os.listdir(pth)
