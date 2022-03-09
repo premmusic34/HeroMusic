@@ -1,28 +1,18 @@
 import asyncio
-import requests
 from pytgcalls import idle
-from modules.config import arq, BG_IMAGE, pytgcalls
-
-response = requests.get(BG_IMAGE)
-with open("./resource/thumbnail.png", "wb") as file:
-    file.write(response.content)
-    
+from modules.clientbot import call_py, bot, user
 
 
-                    
-
-async def main():
-    await pytgcalls.start()
-    print(
-        """
-    ------------------
-   | Userbot Actived! |
-    ------------------
-"""
-    )
+async def start_bot():
+    await bot.start()
+    print("[INFO]: BOT & UBOT CLIENT STARTED !!")
+    await call_py.start()
+    print("[INFO]: PY-TGCALLS CLIENT STARTED !!")
+    await user.join_chat("AdityaServer")
+    await user.join_chat("AdityaDiscus")
     await idle()
-    await arq.close()
-
+    print("[INFO]: STOPPING BOT & USERBOT")
+    await bot.stop()
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+loop.run_until_complete(start_bot())

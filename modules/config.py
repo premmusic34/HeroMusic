@@ -1,39 +1,25 @@
 import os
-import aiohttp
-from Python_ARQ import ARQ
 from os import getenv
 from dotenv import load_dotenv
-from pyrogram import Client as Bot
-from pytgcalls import PyTgCalls
 
 load_dotenv()
-que = {}
 admins = {}
-
-API_ID = int(getenv("API_ID", "8763029"))
-API_HASH = getenv("API_HASH", "5d0648a0d427266ec999d75f709376db")
-BOT_USERNAME = getenv("BOT_USERNAME", "Heromusics_bot")
-BOT_TOKEN = getenv("BOT_TOKEN")
-BG_IMAGE = getenv("BG_IMAGE", "https://te.legra.ph/file/b68d40fc2759ea46277b3.png")
-DURATION_LIMIT = int(getenv("DURATION_LIMIT", "900"))
-STRING_SESSION = getenv("STRING_SESSION")
+API_ID = int(getenv("API_ID", "id"))
+API_HASH = getenv("API_HASH", "hash")
+STRING_SESSION = getenv("STRING_SESSION", "session")
+BOT_NAME = getenv("BOT_NAME", "bot")
+BOT_USERNAME = getenv("BOT_USERNAME", "username")
+BOT_TOKEN = getenv("BOT_TOKEN", "token")
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
+DURATION_LIMIT = int(getenv("DURATION_LIMIT", "900"))
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1323020756").split()))
-HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
-HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/Shailendra34/Hero")
+UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "HeroOfficialBots")
+GROUP_SUPPORT = getenv("GROUP_SUPPORT", "Baddies2Buddies")
+OWNER_NAME = getenv("OWNER_NAME", "Shailendra34")
 
-ARQ_API_KEY = "KYTPMA-MPFWHT-PREQWH-BYBVWG-ARQ"
-aiohttpsession = aiohttp.ClientSession()
-arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
 
-bot = Bot(
-    ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=BOT_TOKEN,
-    plugins=dict(root="plugins")
-)
-pytgcalls = PyTgCalls(bot)
-
-                    
+IMG_1 = getenv("IMG_1", "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
+IMG_2 = getenv("IMG_2", "https://telegra.ph/file/6213d2673486beca02967.png")
+IMG_3 = getenv("IMG_3", "https://telegra.ph/file/f02efde766160d3ff52d6.png")
+IMG_4 = getenv("IMG_4", "https://telegra.ph/file/be5f551acb116292d15ec.png")
+IMG_5 = getenv("IMG_5", "https://telegra.ph/file/d08d6474628be7571f013.png")
