@@ -33,14 +33,14 @@ async def _human_time_duration(seconds):
 @Client.on_message(command("/start") & filters.group & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://te.legra.ph/file/c6e1041c6c9a12913f57a.png",
+        photo=f"https://te.legra.ph/file/72b8500b85d0c4798c6d5.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 💥 ʜᴇʟʟᴏ, ɪ ᴀᴍ sᴜᴘᴇʀ ғᴀsᴛ ᴠᴄ ᴘʟᴀʏᴇʀ
 ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs ...
 ┏━━━━━━━━━━━━━━━━━┓
-┣★ ᴄʀᴇᴀᴛᴏʀ : [ᴀᴅɪᴛʏᴀ ʜᴀʟᴅᴇʀ](https://t.me/{OWNER_NAME})
-┣★ ᴜᴘᴅᴀᴛᴇs : [ᴀᴅɪᴛʏᴀ sᴇʀᴠᴇʀ](https://t.me/{UPDATES_CHANNEL})
-┣★ sᴜᴘᴘᴏʀᴛ : [ᴀᴅɪᴛʏᴀ ᴅɪsᴄᴜs](https://t.me/{GROUP_SUPPORT})
+┣★ ᴄʀᴇᴀᴛᴏʀ : [𝐂𝐥𝐢𝐜𝐤 𝐡𝐞𝐫𝐞](https://t.me/{OWNER_NAME})
+┣★ ᴜᴘᴅᴀᴛᴇs : [𝐂𝐥𝐢𝐜𝐤 𝐡𝐞𝐫𝐞](https://t.me/{UPDATES_CHANNEL})
+┣★ sᴜᴘᴘᴏʀᴛ : [𝐂𝐥𝐢𝐜𝐤 𝐡𝐞𝐫𝐞](https://t.me/{GROUP_SUPPORT})
 ┗━━━━━━━━━━━━━━━━━┛
 
 💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴛʜᴇɴ
