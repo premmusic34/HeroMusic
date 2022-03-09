@@ -1,7 +1,5 @@
 tgcrypto
 asyncio
-aiohttp
-python-arq
 ffmpeg-python
 py-tgcalls
 pyrogram
