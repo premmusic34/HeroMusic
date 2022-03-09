@@ -1,6 +1,6 @@
 import asyncio
 from pytgcalls import idle
-from modules.clientbot import call_py, bot, user
+from modules.clientbot import call_py, bot, user, arq
 
 
 async def start_bot():
@@ -13,7 +13,9 @@ async def start_bot():
     await user.join_chat("baddies2buddies")
     await idle()
     print("[INFO]: STOPPING BOT & USERBOT")
+    await arq.close()
     await bot.stop()
+
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(start_bot())

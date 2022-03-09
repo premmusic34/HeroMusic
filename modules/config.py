@@ -1,4 +1,6 @@
 import os
+import aiohttp
+from Python_ARQ import ARQ
 from os import getenv
 from dotenv import load_dotenv
 
@@ -16,6 +18,10 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1323020756").split()))
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "HeroOfficialBots")
 GROUP_SUPPORT = getenv("GROUP_SUPPORT", "Baddies2Buddies")
 OWNER_NAME = getenv("OWNER_NAME", "Shailendra34")
+
+
+aiohttpsession = aiohttp.ClientSession()
+arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
 
 
 IMG_1 = getenv("IMG_1", "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
