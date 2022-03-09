@@ -1,6 +1,7 @@
 import asyncio
 from pytgcalls import idle
-from modules.clientbot import call_py, bot, user, arq
+from modules.clientbot import call_py, bot, user
+from modules.config import arq
 
 
 async def start_bot():
