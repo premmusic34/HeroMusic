@@ -18,12 +18,20 @@ async def start_bot():
                 description="Start The Bot"
             ),
             BotCommand(
+                command="restart"
+                description="ONLY BOT OWNER"
+            ),    
+            BotCommand(
                 command="help",
                 description="Show Help Message"
             ),
             BotCommand(
                 command="play",
                 description="Play Music As Audio"
+            ),    
+            BotCommand(
+                command="update",
+                description="ONLY BOT OWNER"
             ),
             BotCommand(
                 command="vplay",
