@@ -87,7 +87,7 @@ async def restart_bot(_, message: Message):
 @Client.on_message(filters.command(["usage", "u"]))
 @sudo_users_only
 async def usage_dynos(client, message):
-    if await is_heroku():
+    if is_heroku():
         if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
             return await message.reply_text(
                 "<b>HEROKU APP DETECTED!</b>\n\nɪɴ ᴏʀᴅᴇʀ ᴛᴏ ᴜᴘᴅᴀᴛᴇ ʏᴏᴜʀ ᴀᴘᴘ, ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ sᴇᴛ ᴜᴘ ᴛʜᴇ `HEROKU_API_KEY` ᴀɴᴅ `HEROKU_APP_NAME` ᴠᴀʀs ʀᴇsᴘᴇᴄᴛɪᴠᴇʟʏ..."
