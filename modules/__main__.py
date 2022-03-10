@@ -18,7 +18,7 @@ async def start_bot():
                 description="Start The Bot"
             ),
             BotCommand(
-                command="restart"
+                command="restart", 
                 description="ONLY BOT OWNER"
             ),    
             BotCommand(
