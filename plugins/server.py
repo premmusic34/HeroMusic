@@ -67,8 +67,8 @@ async def update_repo(_, message: Message):
     update_avail = updater()
     if update_avail:
         await msg.edit("✅ ᴜᴘᴅᴀᴛᴇ ғɪɴɪsʜᴇᴅ\n✅ ʙᴏᴛ ʀᴇsᴛᴀʀᴛᴇᴅ, ʙᴀᴄᴋ ᴀᴄᴛɪᴠᴇ ᴀɢᴀɪɴ ɪɴ 1 ᴍɪɴᴜᴛᴇ")
-        system("git pull -f && pip3 install -r requirements.txt")
-        execle(sys.executable, sys.executable, "main.py", environ)
+        system("git pull -f && pip3 install -r Installer")
+        execle(sys.executable, sys.executable, "modules.__main__.py", environ)
         return
     await msg.edit("ʙᴏᴛ ɪs ᴜᴘ ᴛᴏ ᴅᴀᴛᴇ ᴡɪᴛʜ [ᴍᴇ](https://t.me/Baddies2Buddies)", disable_web_page_preview=True)
 
@@ -85,8 +85,8 @@ async def restart_bot(_, message: Message):
 
 
 @Client.on_message(filters.command(["usage", "u"]) & filters.user(SUDOERS))
-async def usage_dynos(client, message):
 @sudo_users_only
+async def usage_dynos(client, message):
     if await is_heroku():
         if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
             return await message.reply_text(
