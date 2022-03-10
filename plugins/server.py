@@ -84,7 +84,7 @@ async def restart_bot(_, message: Message):
 
 
 
-@Client.on_message(filters.command(["usage", "u"]) & filters.user(SUDOERS))
+@Client.on_message(filters.command(["usage", "u"]))
 @sudo_users_only
 async def usage_dynos(client, message):
     if await is_heroku():
