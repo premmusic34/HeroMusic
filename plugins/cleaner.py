@@ -34,8 +34,6 @@ async def clear_raw(_, message: Message):
 
 
 @Client.on_message(command(["cl", "cleanup"]) & ~filters.edited)
-@errors
-@sudo_users_only
 async def cleanup(_, message: Message):
     pth = os.path.realpath(".")
     ls_dir = os.listdir(pth)
