@@ -9,7 +9,7 @@ from modules.helpers.filters import command, other_filters
 from modules.clientbot.queues import QUEUE, add_to_queue
 from modules.clientbot import call_py, user
 from modules.clientbot.utils import bash
-from modules.config import BOT_USERNAME, IMG_5, BOT_NAME, GROUP_SUPPORT
+from config import BOT_USERNAME, IMG_5, BOT_NAME, GROUP_SUPPORT
 from youtubesearchpython import VideosSearch
 
 
@@ -36,7 +36,7 @@ async def ytdl(link: str):
     return 0, stderr
 
 
-@Client.on_message(command(["Play", "@", ".", "/play", f"/play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["Play", "@", "/p", "/play", "/play@{BOT_USERNAME}"]) & other_filters)
 async def play(c: Client, m: Message):
     await m.delete()
     replied = m.reply_to_message

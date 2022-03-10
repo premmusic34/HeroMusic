@@ -1,5 +1,5 @@
 import asyncio
-from modules.config import BOT_USERNAME, SUDO_USERS
+from config import BOT_USERNAME, SUDO_USERS
 from modules.helpers.decorators import authorized_users_only, sudo_users_only, errors
 from modules.helpers.filters import command, other_filters
 from modules.clientbot.clientbot import user as USER
@@ -42,7 +42,7 @@ async def join_group(client, message):
     )
 
 
-@Client.on_message(command(["userbotleave", f"leave"]) & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["userbotleave", "leave"]) & filters.group & ~filters.edited)
 @authorized_users_only
 @sudo_users_only
 async def leave_one(client, message):

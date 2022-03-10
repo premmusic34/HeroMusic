@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
 from modules.clientbot.clientbot import user as aditya
-from modules.config import SUDO_USERS
+from config import SUDO_USERS
 
 @Client.on_message(filters.command(["gcast", "post", "send"]))
 async def broadcast(_, message: Message):

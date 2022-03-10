@@ -1,12 +1,11 @@
 import re
 import asyncio
-
-from modules.config import BOT_USERNAME, IMG_1, IMG_2, IMG_5, BOT_NAME, GROUP_SUPPORT
+from config import BOT_USERNAME, IMG_1, IMG_2, IMG_5, BOT_NAME, GROUP_SUPPORT
 from modules.design.thumbnail import thumb
 from modules.helpers.filters import command, other_filters
 from modules.clientbot.queues import QUEUE, add_to_queue
 from modules.clientbot import call_py, user
-from pyrogram import Client
+from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pytgcalls import StreamType
@@ -352,7 +351,7 @@ async def vplay(c: Client, m: Message):
                             await m.reply_text(f"🚫 error: `{ep}`")
 
 
-@Client.on_message(command(["/vstream", f"/vstream@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(filters.command(["/vstream", "/vstream@{BOT_USERNAME}"]) & other_filters)
 async def vstream(c: Client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -368,7 +367,7 @@ async def vstream(c: Client, m: Message):
     a = await c.get_chat_member(chat_id, aing.id)
     if a.status != "administrator":
         await m.reply_text(
-            f"💡 To use me, I need to be an **Administrator** with the following **permissions**:\n\n» ❌ __Delete messages__\n» ❌ __Invite users__\n» ❌ __Manage video chat__\n\nOnce done, type /reload"
+            f"💡 To use me, I need to be an **Administrator** with the following **permissions**:\n\n» ❌ __Invite users__\n\nOnce done, type /reload"
         )
         return
     if not a.can_invite_users:

@@ -2,7 +2,7 @@ import asyncio
 from time import time
 from datetime import datetime
 from modules.helpers.filters import command
-from modules.config import GROUP_SUPPORT, OWNER_NAME, UPDATES_CHANNEL
+from config import GROUP_SUPPORT, OWNER_NAME, UPDATES_CHANNEL
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
