@@ -22,8 +22,8 @@ async def start_bot():
                 description="ONLY BOT OWNER"
             ),    
             BotCommand(
-                command="help",
-                description="Show Help Message"
+                command="alive",
+                description="Show Alive Message"
             ),
             BotCommand(
                 command="play",
