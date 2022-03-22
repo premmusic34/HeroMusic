@@ -16,11 +16,6 @@ SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1323020756").split()))
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "HeroOfficialBots")
 GROUP_SUPPORT = getenv("GROUP_SUPPORT", "Baddies2Buddies")
 OWNER_NAME = getenv("OWNER_NAME", "Shailendra34")
-HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO", "https://github.com/Shailendra34/Hero"
-)
 
 IMG_1 = getenv("IMG_1", "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
 IMG_2 = getenv("IMG_2", "https://telegra.ph/file/6213d2673486beca02967.png")
