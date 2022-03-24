@@ -1,4 +1,4 @@
-from config import API_HASH, API_ID, BOT_TOKEN, STRING_SESSION
+from modules.config import API_HASH, API_ID, BOT_TOKEN, STRING_SESSION
 from pyrogram import Client
 from pytgcalls import PyTgCalls
 
@@ -16,4 +16,4 @@ user = Client(
     api_hash=API_HASH,
 )
 
-call_py = PyTgCalls(user)
+call_py = PyTgCalls(user, overload_quiet_mode=True)
