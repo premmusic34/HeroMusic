@@ -28,14 +28,6 @@ async def start_bot():
             BotCommand(
                 command="play",
                 description="Play Music As Audio"
-            ),    
-            BotCommand(
-                command="update",
-                description="ONLY BOT OWNER"
-            ),
-            BotCommand(
-                command="vplay",
-                description="Play Music As Video"
             ),
             BotCommand(
                 command="skip",
@@ -48,10 +40,6 @@ async def start_bot():
             BotCommand(
                 command="resume",
                 description="Resume The Paused Music"
-            ),
-            BotCommand(
-                command="vstream",
-                description="Start Live Stream"
             ),
             BotCommand(
                 command="cleanup",
@@ -74,7 +62,7 @@ async def start_bot():
 )
     await call_py.start()
     print("[INFO]: PY-TGCALLS CLIENT STARTED !!")
-    await user.join_chat("AdityaServer")
+    await user.join_chat("AboutShailendra")
     await user.join_chat("HeroOfficialBots")
     await user.join_chat("Yaaro_ki_yaarii")
     await idle()
