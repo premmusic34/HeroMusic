@@ -1,0 +1,15 @@
+version: "2.0"
+services:
+  worker:
+    build: .
+    environment:
+      API_ID: $API_ID
+      API_HASH: $API_HASH
+      BOT_TOKEN: $BOT_TOKEN
+      STRING_SESSION: $STRING_SESSION
+      BOT_NAME: $BOT_NAME
+      BOT_USERNAME: $BOT_USERNAME
+      UPDATES_CHANNEL: $UPDATES_CHANNEL
+      GROUP_SUPPORT: $GROUP_SUPPORT
+      OWNER_NAME: $OWNER_NAME
+      SUDO_USERS: $SUDO_USERS
